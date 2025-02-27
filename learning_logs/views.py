@@ -37,4 +37,4 @@ def new_topic (request):
             return HttpResponseRedirect(reverse('topics'))
     
     context = {'form': form}
-    return render(request, 'learning_logs/newtopic.html', context)
+    return render(request, 'learning_logs/new_topic.html', context)
