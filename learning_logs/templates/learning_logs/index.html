@@ -7,7 +7,25 @@
 {% endblock header %}
 
 {% block content %} 
-        <h2><a href="{% url 'register' %}">Crie uma conta</a> para utilizar o Learning Log 
-        e liste os Tópicos 
-        que voce está aprendizado</h2>
+
+        {% if user.is_authenticated %}    
+            <h2>
+                Sempre que voce aprender algo novo sobre um tópico,
+                faça uma entrada resumindo o que voce aprendeu.
+            </h2>
+
+        {% else  %}
+            <h2>
+                <a href="{% url 'register' %}">Crie uma conta</a>
+                para utilizar o Learning Log e liste os Tópicos 
+                que voce está aprendendo.
+            </h2>
+
+            <h2>
+                Sempre que voce aprender algo novo sobre um tópico,
+                faça uma entrada resumindo o que voce aprendeu.
+            </h2>
+
+        {% endif %}
+
 {% endblock content %}
