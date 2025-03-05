@@ -11,10 +11,13 @@
     <form action="{% url 'login' %}" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
-        
+
+        <a href="{% url 'register' %}">Não tem uma conta? Registre-se aqui!</a>
+
         {% buttons %}
             <button name="submit" class="btn btn-primary">Entrar</button>
         {% endbuttons%}
+        
         <input type="hidden" name="next" value="{% url 'index' %}"/>
     </form>
     
